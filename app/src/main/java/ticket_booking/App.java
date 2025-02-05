@@ -12,11 +12,12 @@ public class App {
         System.out.println("Choose option");
         System.out.println("1 : Sign Up");
         System.out.println("2 : Login");
-        System.out.println("3 : Exit");
+        System.out.println("3 Search Train");
+        System.out.println("4 : Exit");
         System.out.print("Enter option [1 .. 3] ");
         Scanner sc = new Scanner(System.in);
         int option = sc.nextInt();
-        if(option == 3){
+        if(option == 4){
             System.out.println("Thanks for visiting IRCTC");
         }
         else{
@@ -27,6 +28,8 @@ public class App {
                     break;
                 case 2://login
                     bookingService.login();
+                    break;
+                case 3://Search Train
 
             }
         }

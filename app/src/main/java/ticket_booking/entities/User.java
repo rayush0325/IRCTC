@@ -11,15 +11,19 @@ import java.util.UUID;
 @JsonIgnoreProperties(ignoreUnknown = true)
 
 public class User {
-
+    private  String userName;
     private String userId;
     private String name;
-    //private String password;
     private  String hashedPassword;
     private List<Ticket> ticketsBooked;
-
-
     public User(){
+
+    }
+    //for signup
+    public User(String userName, String name, String hashedPassword){
+        this.name = name;
+        this.userName = userName;
+        this.hashedPassword = hashedPassword;
         this.userId = ""+ UUID.randomUUID();
         this.ticketsBooked = new ArrayList<Ticket>();
     }
@@ -32,16 +36,36 @@ public class User {
 //    public  void setPassword(String password){
 //        this.password  = password;
 //    }
-    public void setHashPassword(String hashPassword){
-        this.hashedPassword = hashPassword;
-    }
+
     public String getHashedPassword(){
         return this.hashedPassword;
     }
+
+    public void setHashedPassword(String hashedPassword) {
+        this.hashedPassword = hashedPassword;
+    }
+
     public List<Ticket> getTicketsBooked(){
         return this.ticketsBooked;
     }
+
+    public void setTicketsBooked(List<Ticket> ticketsBooked) {
+        this.ticketsBooked = ticketsBooked;
+    }
+
     public String getUserId(){
         return this.userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }
